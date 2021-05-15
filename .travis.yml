@@ -11,5 +11,5 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
-  - echo "$FavoriteCountry"
+  - echo $FavoriteCountry
   - docker push onurbolukbas/user-api
