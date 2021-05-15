@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 13
+  - 12
 
 services:
   - docker
@@ -8,7 +8,7 @@ services:
 script:
   - docker --version #print the version for logging
   - docker build . -t user-api
-  - docker tag user-api onurbolukbas/user-api:latest
+  - docker tag user-api onurbolukbas/user-api
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
