@@ -18,9 +18,7 @@ script:
   - docker build . -t onurbolukbas/user-api
 
 after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - echo $FAVORITE_COUNTRY
-  - echo $DOCKER_USERNAME
-  - echo $DOCKER_PASSWORD
   - docker images
   - docker push onurbolukbas/user-api
