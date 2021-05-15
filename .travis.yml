@@ -7,9 +7,10 @@ services:
 
 script:
   - docker --version #print the version for logging
-  - docker build . -t onurbolukbas/user-api:v1.0
+  - docker build . -t user-api .
+  - docker tag user-api onurbolukbas/user-api:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
   - docker images
-  - docker push onurbolukbas/user-api:v1.0
+  - docker push onurbolukbas/user-api
