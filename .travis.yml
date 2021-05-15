@@ -15,4 +15,4 @@ after_success:
   - echo $DOCKER_USERNAME
   - echo $DOCKER_PASSWORD
   - docker images
-  - docker push onurbolukbas/user-api
+  - docker push onurbolukbas/user-api:v1
