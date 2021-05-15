@@ -11,5 +11,5 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
-  - echo $FavoriteCountry
+  - docker images
   - docker push onurbolukbas/user-api:v1.0
