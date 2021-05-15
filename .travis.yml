@@ -7,7 +7,7 @@ services:
 
 script:
   - docker --version #print the version for logging
-  - docker build . -t user-api .
+  - docker build . -t user-api
   - docker tag user-api onurbolukbas/user-api:latest
 
 after_success:
