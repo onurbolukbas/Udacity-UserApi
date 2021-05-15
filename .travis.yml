@@ -13,6 +13,8 @@ script:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
   - echo $FAVORITE_COUNTRY
+  - echo $DOCKER_USERNAME
+  - echo $DOCKER_PASSWORD
   - echo "$FAVORITE_COUNTRY"
   - docker images
   - docker push onurbolukbas/user-api
